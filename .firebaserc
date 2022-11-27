@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "app2-72d31": {
+      "hosting": {
+        "app": [
+          "app2-72d31"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "app2-72d31"
+  }
+}

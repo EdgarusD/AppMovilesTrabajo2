@@ -1,0 +1,35 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <div class="encabezado">
+      <a href="home">
+        <ion-title> Lista de empleados </ion-title>
+      </a>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form #formulario [formGroup] = "createempleado" (ngSubmit)="agregarEmpleadoEditado()">
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label> Nombre: </ion-label>
+          <ion-input type="text" required name="nombre" formControlName = "nombre"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label> Salario: </ion-label>
+          <ion-input type="number" required name="slario" formControlName = "slario"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit">{{titulo}}</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>

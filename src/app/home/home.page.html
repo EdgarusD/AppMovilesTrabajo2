@@ -1,20 +1,35 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <div class="encabezado">
+      <ion-title> Lista de Empleados </ion-title>
+      <a href="add-empleados">
+        <ion-button>Añadir empleado</ion-button>
+      </a>
+    </div>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <div class="content">
+    <div id="container">
+      <p>Lista de empleados</p>
+    </div>
+    <div class="lista">
+      <ion-grid>
+        <ion-row>
+          <ion-col><ion-text> Nombre </ion-text> </ion-col>
+          <ion-col> slario </ion-col>
+          <ion-col
+            ><ion-text>Editar y eliminar</ion-text></ion-col>
+        </ion-row>
+        <ion-row *ngFor="let empleado of empleados">
+          <ion-col><ion-text> {{empleado.nombre}} </ion-text> </ion-col>
+          <ion-col> {{empleado.slario}} </ion-col>
+          <ion-col
+            ><i class="fas fa-edit" [routerLink]="['/edit-empleados/',empleado.id]"></i> <i (click)="eliminarEmpleado(empleado.id)" class="fas fa-trash"></i
+          ></ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
   </div>
 </ion-content>
